@@ -19,8 +19,11 @@ np.set_printoptions(precision=2)
 #%% Importing the dataset
 dataset = pd.read_csv('Ads_CTR_Optimisation.csv') # transaction for one week
 
+#%% Scale
+N_glob     = 500
+
 #%% UCB Parameters Init
-N = 10000   # number of round
+N = N_glob   # number of round
 d = len(dataset.values[0])  # number of ads
 ads_selected = []
 n_selections = [0] * d
@@ -54,7 +57,11 @@ for n in range(0, N):
     total_reward      = total_reward + reward
 
 # Histogram
-plt.figure(1)
+
+# Figure number
+fig = plt.figure(1)
+fig.suptitle(f'UCB vs Thompson - iteration = {N}',fontweight ="bold")
+
 plt.subplot(2, 2, 1)
 
 plt.hist(ads_selected, bins=np.arange(-0.5, len(dataset.values[0])))
@@ -62,7 +69,7 @@ plt.title('Histogram of Selections - UCB')
 # plt.xlabel('Advertisement No.')
 plt.xticks(np.arange(0, len(dataset.values[0]), step=1))
 # plt.ylabel('Number of Times')
-plt.ylim([0, 10000])
+# plt.ylim([0, y_lim_glob])
 
 # Reward Plot
 plt.subplot(2, 2, 2)
@@ -74,16 +81,17 @@ plot_bar_rew = plt.barh(y_ad, sum_rewards)
 # plot layout settings
 plt.title('Reward Accumulation - UCB')
 
-plt.xlim([0, 3000])
+# plt.xlim([0, x_lim_glob])
 # plt.xlabel('Accumulated Rewards')
 
 plt.yticks(y_ad, [f'Ad {i}' for i in y_ad])
 
 
-#%% Thompson Sampling params
-N               = 10000   # number of round
+# Thompson Sampling params
+N               = N_glob   # number of round
 d               = len(dataset.values[0])  # number of ads
 ads_selected    = []
+n_selections_TS = [0] * d
 n_rewards_1     = [0] * d
 n_rewards_0     = [0] * d
 sum_rewards     = [0] * d
@@ -106,9 +114,10 @@ for n in range(0, N):
     max_index   = np.array(random_beta).argmax()
     
     # # Update params
-    ad          = max_index
+    ad                   = max_index
+    n_selections_TS[ad] += 1
     ads_selected.append(ad)
-    reward      = dataset.values[n, ad]
+    reward               = dataset.values[n, ad]
     
     if reward == 1:
         n_rewards_1[ad] += 1
@@ -129,7 +138,7 @@ plt.title('Histogram of Selections - Thompson')
 plt.xlabel('Advertisement No.')
 plt.xticks(np.arange(0, len(dataset.values[0]), step=1))
 plt.ylabel('Number of Times')
-plt.ylim([0, 10000])
+# plt.ylim([0, y_lim_glob])
 
 # Reward Plot
 plt.subplot(2, 2, 4)
@@ -141,8 +150,31 @@ plot_bar_rew = plt.barh(y_ad, sum_rewards)
 # plot layout settings
 plt.title('Reward Accumulation - Thompson')
 
-plt.xlim([0, 3000])
+# plt.xlim([0, x_lim_glob])
 plt.xlabel('Accumulated Rewards')
 
 plt.yticks(y_ad, [f'Ad {i}' for i in y_ad])
 
+
+#%% X, Y axis update
+
+# Histrogram Bar
+max_y_lim_bar  = max(n_selections + n_selections_TS)
+offset_y_bar   = 1.1
+
+# Reward Bar
+max_X_lim_bar_rew  = max(sum_rewards + n_rewards_1)
+offset_X_bar_rew   = 1.1
+
+# Update lim
+plt.subplot(2, 2, 1)
+plt.ylim([0, max_y_lim_bar*offset_y_bar])
+
+plt.subplot(2, 2, 3)
+plt.ylim([0, max_y_lim_bar*offset_y_bar])
+
+plt.subplot(2, 2, 2)
+plt.xlim([0, max_X_lim_bar_rew*offset_X_bar_rew])
+
+plt.subplot(2, 2, 4)
+plt.xlim([0, max_X_lim_bar_rew*offset_X_bar_rew])
