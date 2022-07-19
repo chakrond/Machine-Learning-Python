@@ -31,7 +31,7 @@ sc_X = StandardScaler()
 sc_y = StandardScaler() # if y is already between 0 and 1, no need to scale
 scaled_X_train = sc_X.fit_transform(X_train)
 scaled_X_test = sc_X.fit_transform(X_test)
-scaled_y_train = sc_y.fit_transform(y_train)
+# scaled_y_train = sc_y.fit_transform(y_train.reshape(-1, 1))
 
 # Classifier
 from sklearn.linear_model import LogisticRegression
@@ -42,7 +42,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 
 
-X_train_set, y_train_set = scaled_X_train, scaled_y_train
+X_train_set, y_train_set = scaled_X_train, y_train
+
+test = LogisticRegression(random_state=0)
+test.fit(X_train_set, np.ravel(y_train_set))
 
 c1 = (LogisticRegression(random_state=0).fit(X_train_set, y_train_set), "Logistic Regression")
 c2 = (KNeighborsClassifier(n_neighbors=5, metric='minkowski').fit(X_train_set, y_train_set), "KNeighbors Classifier")
@@ -64,30 +67,6 @@ X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0
 from matplotlib.colors import ListedColormap
 color_map = {-1: (1, 1, 1), 0: (0, 0, 0.9), 1: (1, 0, 0), 2: (0.8, 0.6, 0)}
 
-
-# for i in range(0, len(classifiers)):
-for i, (clf, title) in enumerate(classifiers):
-    # Plot the decision boundary. For that, we will assign a color to each
-    # point in the mesh [x_min, x_max]x[y_min, y_max].
-    plt.figure(0)
-    plt.subplot(3, 3, i + 1)
-    Z = clf.predict(sc_X.transform(np.array([X1.ravel(), X2.ravel()]).T))
-    # Put the result into a color plot
-    Z = Z.reshape(X1.shape)
-    # plt.contourf(X1, X2, Z, cmap=plt.cm.Paired)
-    plt.contourf(X1, X2, Z, alpha = 0.75, cmap = ListedColormap(('red', 'green')))
-    
-    # plt.axis("off")
-    
-    
-    # Plot the training points
-    for (q, j) in enumerate(np.unique(y_set)):
-        plt.scatter(X_set[:, 0].reshape((len(X_set), 1))[y_set == j], X_set[:, 1].reshape((len(X_set), 1))[y_set == j], s = 1.5, c = ListedColormap(('red', 'green'))(q), label = j)
-        # plt.xlabel('Age')
-        # plt.ylabel('Estimated Salary')
-        plt.legend()
-        
-    plt.title(title)
 
 # Making confusion matrix   
 from sklearn.metrics import confusion_matrix, accuracy_score, plot_confusion_matrix
