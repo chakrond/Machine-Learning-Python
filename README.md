@@ -24,7 +24,7 @@ Supervised Learning
       - Decision Tree Classification
       - Random Forest Classification
    
-   Classification Comparison
+  Classification Comparison
   ![Classification](https://user-images.githubusercontent.com/94983485/179698487-c192e7de-bc5e-4013-ad61-f4c97add457a.png)
   
   Classification Decission Boundary Comparison
@@ -35,6 +35,12 @@ Unsupervised Learning
   1. Clustering
       - K-Means Clustering
       - Hierarchical Clustering
+ 
+  Clustering Comparison
+  ![Clustering Comparison](https://user-images.githubusercontent.com/94983485/179699780-b048f7f0-7436-443f-ac03-3d202d43ccde.png)
+  
+  Optimal Comparison
+  ![Optimal Comparison](https://user-images.githubusercontent.com/94983485/179699916-60d32f30-e637-4418-b276-520c08d1e9f3.png)
 
 
 Association Rule Learning
