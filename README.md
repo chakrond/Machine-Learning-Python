@@ -52,4 +52,9 @@ Reinforcement Learning
   - Upper Confidence Bound (UCB)
   - Thompson Sampling
   
-  
+  UCB vs Thompson at iteration of 500
+  ![UCB_vs_Thompson_500](https://user-images.githubusercontent.com/94983485/179701438-8eb03ee0-d899-495a-a9ed-c18a88a4d6ce.png)
+
+  UCB vs Thompson at iteration of 10000
+  ![UCB_vs_Thompson_1000](https://user-images.githubusercontent.com/94983485/179701546-4fb63e3d-d4cb-40b7-819c-7f6b99234bcb.png)
+
