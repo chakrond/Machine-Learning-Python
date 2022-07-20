@@ -58,3 +58,10 @@ Reinforcement Learning
   UCB vs Thompson at iteration of 10000
   ![UCB_vs_Thompson_1000](https://user-images.githubusercontent.com/94983485/179701546-4fb63e3d-d4cb-40b7-819c-7f6b99234bcb.png)
 
+
+Natural Language Processing
+  - Bag of words (CountVectorizer, Regression)
+  
+ CountVectorizer & Prediction(Regression)
+![NLP_BagOfWords](https://user-images.githubusercontent.com/94983485/179868269-d480b1b6-8e3e-4c21-98fe-fea2a931f557.png)
+
