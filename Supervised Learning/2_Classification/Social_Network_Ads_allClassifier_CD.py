@@ -30,7 +30,7 @@ from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 # sc_y = StandardScaler() # y is already between 0 and 1, no need to scale
 scaled_X_train = sc_X.fit_transform(X_train)
-scaled_X_test = sc_X.fit_transform(X_test)
+scaled_X_test = sc_X.transform(X_test)
 # scaled_y_train = sc_y.fit_transform(y_train)
 
 # Classifier
@@ -41,23 +41,15 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 
-# classifiers  = (
-#     LogisticRegression(random_state=0),
-#     KNeighborsClassifier(n_neighbors=5, metric='minkowski'),
-#     SVC(kernel = 'linear', random_state=0),
-#     SVC(kernel = 'rbf', random_state=0),
-#     GaussianNB(),
-# )
-# classifiers = (clf.fit(scaled_X_train, y_train) for clf in classifiers)
+X_train_set, y_train_set = scaled_X_train, y_train
 
-c1 = (LogisticRegression(random_state=0).fit(scaled_X_train, y_train), "Logistic Regression")
-c2 = (KNeighborsClassifier(n_neighbors=5, metric='minkowski').fit(scaled_X_train, y_train), "KNeighbors Classifier")
-c3 = (SVC(kernel = 'linear', random_state=0).fit(scaled_X_train, y_train), "SVC with Linear kernel")
-c4 = (SVC(kernel = 'rbf', random_state=0).fit(scaled_X_train, y_train), "SVC with RBF kernel")
-c5 = (GaussianNB().fit(scaled_X_train, y_train), "GaussianNB")
-c6 = (DecisionTreeClassifier(criterion='entropy', random_state=0).fit(scaled_X_train, y_train), "Decision Tree")
-c7 = (RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=0).fit(scaled_X_train, y_train), "Random Forest")
-
+c1 = (LogisticRegression(random_state=0).fit(X_train_set, y_train_set), "Logistic Regression")
+c2 = (KNeighborsClassifier(n_neighbors=5, metric='minkowski').fit(X_train_set, y_train_set), "KNeighbors Classifier")
+c3 = (SVC(kernel = 'linear', random_state=0).fit(X_train_set, y_train_set), "SVC with Linear kernel")
+c4 = (SVC(kernel = 'rbf', random_state=0).fit(X_train_set, y_train_set), "SVC with RBF kernel")
+c5 = (GaussianNB().fit(X_train_set, y_train_set), "Gaussian Naive Bayes")
+c6 = (DecisionTreeClassifier(criterion='entropy', random_state=0).fit(X_train_set, y_train_set), "Decision Tree")
+c7 = (RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=0).fit(X_train_set, y_train_set), "Random Forest")
 
 classifiers = (c1, c2, c3, c4, c5, c6, c7)
 

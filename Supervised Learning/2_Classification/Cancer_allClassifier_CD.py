@@ -30,7 +30,7 @@ from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 sc_y = StandardScaler() # if y is already between 0 and 1, no need to scale
 scaled_X_train = sc_X.fit_transform(X_train)
-scaled_X_test = sc_X.fit_transform(X_test)
+scaled_X_test = sc_X.transform(X_test)
 # scaled_y_train = sc_y.fit_transform(y_train.reshape(-1, 1))
 
 # Classifier
@@ -44,8 +44,8 @@ from sklearn.ensemble import RandomForestClassifier
 
 X_train_set, y_train_set = scaled_X_train, y_train
 
-test = LogisticRegression(random_state=0)
-test.fit(X_train_set, np.ravel(y_train_set))
+# test = LogisticRegression(random_state=0)
+# test.fit(X_train_set, np.ravel(y_train_set))
 
 c1 = (LogisticRegression(random_state=0).fit(X_train_set, y_train_set), "Logistic Regression")
 c2 = (KNeighborsClassifier(n_neighbors=5, metric='minkowski').fit(X_train_set, y_train_set), "KNeighbors Classifier")
@@ -58,18 +58,8 @@ c7 = (RandomForestClassifier(n_estimators=10, criterion='entropy', random_state=
 classifiers = (c1, c2, c3, c4, c5, c6, c7)
 
 
-# create a mesh to plot
-X_set, y_set = X_test, y_test
-X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 2),
-                     np.arange(start = X_set[:, 1].min() - 1000, stop = X_set[:, 1].max() + 1000, step = 2))
-
-
-from matplotlib.colors import ListedColormap
-color_map = {-1: (1, 1, 1), 0: (0, 0, 0.9), 1: (1, 0, 0), 2: (0.8, 0.6, 0)}
-
-
 # Making confusion matrix   
-from sklearn.metrics import confusion_matrix, accuracy_score, plot_confusion_matrix
+from sklearn.metrics import accuracy_score, plot_confusion_matrix
 
 nrows = 3
 ncols = 3
