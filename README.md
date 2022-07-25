@@ -27,7 +27,7 @@ Supervised Learning
   Classification Comparison
   ![Classification](https://user-images.githubusercontent.com/94983485/179698487-c192e7de-bc5e-4013-ad61-f4c97add457a.png)
   
-  Classification Decission Boundary Comparison
+  Classification Decision Boundary Comparison
   ![Classification_Decission_Boundary](https://user-images.githubusercontent.com/94983485/179698520-6133db07-a41e-412f-ba6f-dcf99e498c63.png)
 
 
