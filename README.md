@@ -3,26 +3,26 @@
 This repo contains
 
 Supervised Learning
-  1. Regression
-      - Simple Linear Regression
-      - Multiple Linear Regression
-      - Polynomial Regression
-      - Support Vector Regression (SVR)
-      - Decision Tree Regression
-      - Random Forest Regression
+  - Regression
+    - Simple Linear Regression
+    - Multiple Linear Regression
+    - Polynomial Regression
+    - Support Vector Regression (SVR)
+    - Decision Tree Regression
+    - Random Forest Regression
   
   Regression Comparison
   ![Regression](https://user-images.githubusercontent.com/94983485/179699151-0bc06c20-a9b5-44a6-883b-81d37a38957f.png)
 
   
-  2. Classification
-      - Logistic Regression
-      - K-Nearest Neighbors (K-NN)
-      - Support Vector Machine (SVM)
-      - Kernel SVM
-      - Naive Bayes
-      - Decision Tree Classification
-      - Random Forest Classification
+  - Classification
+    - Logistic Regression
+    - K-Nearest Neighbors (K-NN)
+    - Support Vector Machine (SVM)
+    - Kernel SVM
+    - Naive Bayes
+    - Decision Tree Classification
+    - Random Forest Classification
    
   Classification Comparison
   ![Classification](https://user-images.githubusercontent.com/94983485/179698487-c192e7de-bc5e-4013-ad61-f4c97add457a.png)
@@ -32,9 +32,9 @@ Supervised Learning
 
 
 Unsupervised Learning
-  1. Clustering
-      - K-Means Clustering
-      - Hierarchical Clustering
+  - Clustering
+    - K-Means Clustering
+    - Hierarchical Clustering
  
   Clustering Comparison
   ![Clustering Comparison](https://user-images.githubusercontent.com/94983485/179699780-b048f7f0-7436-443f-ac03-3d202d43ccde.png)
@@ -62,6 +62,26 @@ Reinforcement Learning
 Natural Language Processing
   - Bag of words (CountVectorizer, Regression)
   
- CountVectorizer & Prediction(Regression)
-![NLP_BagOfWords](https://user-images.githubusercontent.com/94983485/179868269-d480b1b6-8e3e-4c21-98fe-fea2a931f557.png)
+  CountVectorizer & Prediction(Regression)
+  ![NLP_BagOfWords](https://user-images.githubusercontent.com/94983485/179868269-d480b1b6-8e3e-4c21-98fe-fea2a931f557.png)
+
+
+Dimensionality Reduction
+  - Supervised
+    - Linear Discriminant Analysis (LDA)
+    
+  - Unsupervised
+    - Principal Component Analysis (PCA)
+    - Kernel PCA
+
+  Decision Boundary Comparison (Training Set)
+  ![decision_boundary_compare](https://user-images.githubusercontent.com/94983485/180927605-77add443-988f-4a1a-a472-7f0906f76ebf.png)
+
+  Confusion Matrix Comparison & Accuracy Score (Test Set)
+  ![confusion_mat_compare](https://user-images.githubusercontent.com/94983485/180927896-71294e2e-bb63-4aad-a217-f0527100a22c.png)
+
+
+Deep Learning
+  - Artificial Neural Networks (ANN)
+  - Convolutional Neural Networks (CNN)
 
