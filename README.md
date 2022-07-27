@@ -81,7 +81,17 @@ Dimensionality Reduction
   ![confusion_mat_compare](https://user-images.githubusercontent.com/94983485/180927896-71294e2e-bb63-4aad-a217-f0527100a22c.png)
 
 
+XGBoost
+  - XGBoost Classifier
+
+
+Model Validation
+  - k-Fold Cross Validation
+  - Grid Search
+
+
 Deep Learning
   - Artificial Neural Networks (ANN)
   - Convolutional Neural Networks (CNN)
-
+  
+  
