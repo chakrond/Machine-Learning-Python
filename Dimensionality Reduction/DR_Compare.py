@@ -152,97 +152,51 @@ classifiers_name =  [f'clf_00{i}' for i in range(0, n_model)] + [f'clf_10{i}' fo
                     [f'clf_20{i}' for i in range(0, n_model)] + [f'clf_30{i}' for i in range(0, n_model)]
 
 classifiers = [eval(clf) for clf in classifiers_name]
+titles_set  = [title, title_PCA, title_kPCA, title_LDA]
 
 #%% Confusion matrix   
 from sklearn.metrics import  ConfusionMatrixDisplay, accuracy_score
 
+X_set_name = ['scaled_X_', 'pca_X_', 'kernel_pca_X_', 'LDA_X_']
+X_set_name_train = [name + 'train' for name in X_set_name]
+X_set_name_test  = [name + 'test' for name in X_set_name]
+
 nrows = 4
 ncols = 7
-fig, axes = plt.subplots(nrows, ncols, figsize=(10,8))
-fig.suptitle('Confusion Matrix Comparison of Dimensionality Reduction',fontweight ="bold")
+fig, axes = plt.subplots(nrows, ncols, figsize=(6,6))
+plt.rcParams['font.size'] = '6'
+fig.suptitle('Confusion Matrix Comparison of Dimensionality Reduction',fontweight ="bold", fontsize=12)
 
 for i in range(0, nrows*ncols):
     axes.flatten()[i].axis("off")
  
-j, k, q, r = 0, 0, 0, 0
-for (i, clf) in enumerate(classifiers):
+idx_subplot = 0
+for (m, x_set_name_type) in enumerate(X_set_name_test): 
+
+    X_confMat_model, y_confMat_model = eval(x_set_name_type), y_test
     
-    txt     = classifiers_name[i]
-    regE    = re.search("\d\d\d", txt)
-    model_n = int(regE.group())
+    # Filter the model number and name
+    model_list      = list(filter(lambda elem: re.match(f'^clf_{m}', elem[1]), enumerate(classifiers_name)))
+    name_model_list = [idx[1] for idx in model_list]
+    idx_model_list  = [idx[0] for idx in model_list]
     
-    # Model
-    if model_n >= 0 and model_n < 100:
+
+    for (i, k) in enumerate(idx_model_list):
         
-        X_confMat_model, y_confMat_model = scaled_X_test, y_test
-        
-        fig.add_subplot(axes.flatten()[i])
-        y_pred = clf.predict(X_confMat_model)
-        ConfusionMatrixDisplay.from_predictions(y_confMat_model, y_pred, ax=axes.flatten()[i], colorbar=False)
+        fig.add_subplot(axes.flatten()[idx_subplot])
+        y_pred = classifiers[k].predict(X_confMat_model)
+        ConfusionMatrixDisplay.from_predictions(y_confMat_model, y_pred, ax=axes.flatten()[idx_subplot], colorbar=False)
         acc_score = round(accuracy_score(y_confMat_model, y_pred), 2)
-        axes.flatten()[i].title.set_text(f'{title[j]}, ACC = {acc_score}')
-        plt.axis("on")
-        plt.xlabel('')
-        # plt.ylabel('')
-        plt.tight_layout()
-        j += 1
-        
-        
-    # Model with PCA
-    if model_n >= 100 and model_n < 200 :
-    
-        X_confMat_model, y_confMat_model = pca_X_test, y_test
-    
-        fig.add_subplot(axes.flatten()[i])
-        y_pred = clf.predict(X_confMat_model)
-        ConfusionMatrixDisplay.from_predictions(y_confMat_model, y_pred, ax=axes.flatten()[i], colorbar=False)
-        acc_score = round(accuracy_score(y_confMat_model, y_pred), 2)
-        axes.flatten()[i].title.set_text(f'{title_PCA[k]}, ACC = {acc_score}')
-        plt.axis("on")
-        plt.xlabel('')
-        # plt.ylabel('')
-        plt.tight_layout()
-        k += 1
-        
-        
-    # Model with kPCA
-    if model_n >= 200 and model_n < 300:
-    
-        X_confMat_model, y_confMat_model = kernel_pca_X_test, y_test
-    
-        fig.add_subplot(axes.flatten()[i])
-        y_pred = clf.predict(X_confMat_model)
-        ConfusionMatrixDisplay.from_predictions(y_confMat_model, y_pred, ax=axes.flatten()[i], colorbar=False)
-        acc_score = round(accuracy_score(y_confMat_model, y_pred), 2)
-        axes.flatten()[i].title.set_text(f'{title_kPCA[q]}, ACC = {acc_score}')
-        plt.axis("on")
-        plt.xlabel('')
-        # plt.ylabel('')
-        plt.tight_layout()
-        q += 1
-        
-        
-    # Model with LDA
-    if model_n >= 300 and model_n < 400:
-    
-        X_confMat_model, y_confMat_model = LDA_X_test, y_test
-    
-        fig.add_subplot(axes.flatten()[i])
-        y_pred = clf.predict(X_confMat_model)
-        ConfusionMatrixDisplay.from_predictions(y_confMat_model, y_pred, ax=axes.flatten()[i], colorbar=False)
-        acc_score = round(accuracy_score(y_confMat_model, y_pred), 2)
-        axes.flatten()[i].title.set_text(f'{title_LDA[r]}, ACC = {acc_score}')
+        axes.flatten()[idx_subplot].title.set_text(f'{titles_set[m][i]}, ACC = {acc_score}')
         plt.axis("on")
         # plt.xlabel('')
         # plt.ylabel('')
         plt.tight_layout()
-        r += 1
-
+        idx_subplot += 1
 
 #%% Create a mesh to plot, Decision boundary (Training Set)
 
 from matplotlib.colors import ListedColormap
-# color_map = {-1: (1, 1, 1), 0: (0, 0, 0.9), 1: (1, 0, 0), 2: (0.8, 0.6, 0)}
 
 X_set_name = ['pca_X_', 'kernel_pca_X_', 'LDA_X_']
 X_set_name_train = [name + 'train' for name in X_set_name]
@@ -269,23 +223,20 @@ for (m, x_set_name_type) in zip([1, 2, 3], X_set_name_train): # Exclude normal m
     for (i, k) in enumerate(idx_model_list):
 
         plt.subplot(3, 7, idx_subplot)
+        plt.rcParams['font.size'] = '6'
         idx_subplot += 1
-        Z = classifiers[i].predict(np.array([X1.ravel(), X2.ravel()]).T)
+        Z = classifiers[k].predict(np.array([X1.ravel(), X2.ravel()]).T)
         # Put the result into a color plot
         Z = Z.reshape(X1.shape)
         # plt.contourf(X1, X2, Z, cmap=plt.cm.Paired)
         plt.contourf(X1, X2, Z, alpha = 0.75, cmap = ListedColormap(('red', 'green', 'blue')))
         
         # Title  
-        if m == 1:
-            plt.title(f'{title_PCA[k]}')
+        plt.title(f'{titles_set[m][i]}')
         
-        if m == 2:
-            plt.title(f'{title_kPCA[k]}')
-            
-        if m == 3:
-            plt.title(f'{title_LDA[k]}')
-        
+        # plt.xlabel('xlabel', fontsize=10)
+        # plt.ylabel('ylabel', fontsize=10)
+
         # plt.axis("off")
         
         # Plot the training points
