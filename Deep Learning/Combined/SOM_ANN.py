@@ -125,37 +125,46 @@ for i in range(0, actual_max_winning_node_value.shape[0]):
 
 max_winning_node_ID = set_ID[np.array(idx_match)]
 
+is_fraud = np.zeros(len(dataset))
+for i in range(len(dataset)):
+  if dataset.iloc[i, 0] in max_winning_node_ID:
+    is_fraud[i] = 1
+
 #%% ANN Model 
 
 #%% Splitting the dataset
 from sklearn.model_selection import train_test_split
 
-X_train, X_test, y_train, y_test = train_test_split(set_features, set_true_class, test_size=0.2, random_state=1)
+# X_train, X_test, y_train, y_test = train_test_split(set_features, set_true_class, test_size=0.2, random_state=1)
+X_train = dataset.iloc[:, 1:].values
+y_train = is_fraud
 
 #%% Feature Scaling
 
-# sc = StandardScaler()
-sc = MinMaxScaler(feature_range=(0, 1))
+sc = StandardScaler()
+# sc = MinMaxScaler(feature_range=(0, 1))
 X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+# X_test = sc.transform(X_test)
 
 #%% Building ANN (Create Sequential model)
 ann = tf.keras.models.Sequential() # Model
 
 # Add input layer, 1st layer
-ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
+ann.add(tf.keras.layers.Dense(units=6, kernel_initializer='uniform', activation='relu', input_dim=X_train.shape[1]))
 
 # Add input layer, 2nd layer
-ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
+ann.add(tf.keras.layers.Dense(units=6, kernel_initializer='uniform', activation='relu'))
 
 # Add output layer
-ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
+ann.add(tf.keras.layers.Dense(units=1, kernel_initializer='uniform', activation='sigmoid'))
 
 # Compile ANN
 ann.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Training ANN
-ann.fit(X_train, y_train, batch_size=32, epochs=100) # batch learning
+with tf.device('/cpu:0'):
+# with tf.device('/gpu:0'):
+    ann.fit(X_train, y_train, batch_size=32, epochs=100) # batch learning
 
 # Make prediction
 # y_pred = ann.predict(X_test) # result give the propability
@@ -166,31 +175,31 @@ ann.fit(X_train, y_train, batch_size=32, epochs=100) # batch learning
 models = [ann]
 
 #%% Making confusion matrix   
-from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score
+# from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score
 
-titles = ['ANN Model']
+# titles = ['ANN Model']
 
-n_model = len(titles)
+# n_model = len(titles)
 
-nrows = 2
-ncols = 1
-fig, axes = plt.subplots(nrows, ncols, figsize=(15,10))
+# nrows = 2
+# ncols = 1
+# fig, axes = plt.subplots(nrows, ncols, figsize=(15,10))
 
-for i in range(0, nrows*ncols):
-    axes.flatten()[i].axis("off")
+# for i in range(0, nrows*ncols):
+#     axes.flatten()[i].axis("off")
  
-for i, model, title in zip(np.arange(0, n_model), models, titles):
+# for i, model, title in zip(np.arange(0, n_model), models, titles):
     
-    fig.add_subplot(axes.flatten()[i])
-    y_pred = model.predict(X_test)
-    y_pred_bool = (y_pred>0.5)
-    ConfusionMatrixDisplay.from_predictions(y_test, y_pred_bool, ax=axes.flatten()[i], colorbar=False)
-    acc_score = round(accuracy_score(y_test, y_pred_bool), 2)
-    axes.flatten()[i].title.set_text(f'{title}, Accuracy Score = {acc_score}')
-    plt.axis("on")
-    plt.tight_layout()
+#     fig.add_subplot(axes.flatten()[i])
+#     y_pred = model.predict(X_test)
+#     y_pred_bool = (y_pred>0.5)
+#     ConfusionMatrixDisplay.from_predictions(y_test, y_pred_bool, ax=axes.flatten()[i], colorbar=False)
+#     acc_score = round(accuracy_score(y_test, y_pred_bool), 2)
+#     axes.flatten()[i].title.set_text(f'{title}, Accuracy Score = {acc_score}')
+#     plt.axis("on")
+#     plt.tight_layout()
     
 #%% Make prediction on Customer ID
-customer_input = sc.transform(actual_max_winning_node_value)
+customer_input = dataset.iloc[:, 1:].values
 customer_pred = ann.predict(customer_input)
-customer_prop_ID = np.concatenate((max_winning_node_ID, customer_pred*100), axis=1)
+customer_prop_ID = np.concatenate((max_winning_node_ID, customer_pred[np.array(idx_match)]*100), axis=1)
