@@ -1,6 +1,6 @@
 # Machine-Learning-Python
 
-This repo contains
+This repo contains the example work of the following:
 
 Supervised Learning
   - Regression
@@ -91,7 +91,13 @@ Model Validation
 
 
 Deep Learning
-  - Artificial Neural Networks (ANN)
-  - Convolutional Neural Networks (CNN)
-  
+  - Supervised
+    - Artificial Neural Networks (ANN)
+    - Convolutional Neural Networks (CNN)
+    - Recurrent Neural Networks (RNN)
+    
+  - Unsupervised
+    - Self Organizing Maps
+    - Boltzmann Machines
+    - AutoEncoders
   
