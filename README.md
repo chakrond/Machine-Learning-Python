@@ -91,6 +91,7 @@ Model Validation
 
 
 Deep Learning
+
   - Supervised
     - Artificial Neural Networks (ANN)
     - Convolutional Neural Networks (CNN)
@@ -100,4 +101,17 @@ Deep Learning
     - Self Organizing Maps
     - Boltzmann Machines
     - AutoEncoders
-  
+    
+  - Function
+    - Sigmoid
+    ![sigmoid_relu](https://user-images.githubusercontent.com/94983485/183615058-fe96a2af-28d6-44c9-b7bd-e3ca4f7e6efe.jpg)
+
+    - Softmax
+    ![softmax](https://user-images.githubusercontent.com/94983485/183615232-d8dd46f6-500d-4cac-b567-292d3ec005f6.png)
+
+    - Mean Sample
+    ![hist_sampling](https://user-images.githubusercontent.com/94983485/183615372-9bcc96a5-b875-4b81-b953-be566d9855f9.png)  
+    
+    - Gradient Descent 1D Animated
+    ![gradient_descent1D_animated](https://user-images.githubusercontent.com/94983485/183615587-9094fb34-aaad-46c1-9120-cabe5a33e581.png)
+
