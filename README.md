@@ -116,6 +116,7 @@ Deep Learning
       ![gradient_descent1D_animated](https://user-images.githubusercontent.com/94983485/183615587-9094fb34-aaad-46c1-9120-cabe5a33e581.png)
     
     - Gradient Descent 2D Animated
+    
       ![gradient_descent_2D](https://user-images.githubusercontent.com/94983485/184464016-c1c72cf6-6b6f-4e33-ad1a-0ee1c9b0119b.png)
       
       
