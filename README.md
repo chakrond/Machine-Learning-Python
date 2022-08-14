@@ -93,10 +93,13 @@ Model Validation
 Deep Learning
 
   - Supervised
-  
     - Artificial Neural Networks (ANN)
-      ![Figure_1](https://user-images.githubusercontent.com/94983485/184515674-73c0a63f-14e3-4d69-870e-8acda9b72c1c.png)
-    
+      - Binary Classification
+        ![Figure_1](https://user-images.githubusercontent.com/94983485/184515674-73c0a63f-14e3-4d69-870e-8acda9b72c1c.png)
+        
+      - Multiple Classification 
+        ![multiple_classification_softmax](https://user-images.githubusercontent.com/94983485/184528599-ef56881f-8df3-466d-9888-53fcd06dd80f.png)
+        
     - Convolutional Neural Networks (CNN)
     - Recurrent Neural Networks (RNN)
     
