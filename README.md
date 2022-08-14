@@ -99,6 +99,9 @@ Deep Learning
         
       - Multiple Classification 
         ![multiple_classification_softmax](https://user-images.githubusercontent.com/94983485/184528599-ef56881f-8df3-466d-9888-53fcd06dd80f.png)
+
+      - Overall Classification Performance (Softmax)
+        ![classification_performance](https://user-images.githubusercontent.com/94983485/184553831-55f606e8-38a1-44f3-a344-2dd736ac567a.png)
         
     - Convolutional Neural Networks (CNN)
     - Recurrent Neural Networks (RNN)
