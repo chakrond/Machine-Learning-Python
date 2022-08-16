@@ -97,11 +97,14 @@ Deep Learning
       - Binary Classification
         ![Figure_1](https://user-images.githubusercontent.com/94983485/184515674-73c0a63f-14e3-4d69-870e-8acda9b72c1c.png)
         
-      - Multiple Classification 
+      - Multiple Classification - Experiments over learning rate parameters
         ![multiple_classification_softmax](https://user-images.githubusercontent.com/94983485/184528599-ef56881f-8df3-466d-9888-53fcd06dd80f.png)
 
-      - Overall Classification Performance (Softmax)
+      - Overall Classification Performance (Softmax) - Experiments over learning rate parameters
         ![classification_performance](https://user-images.githubusercontent.com/94983485/184553831-55f606e8-38a1-44f3-a344-2dd736ac567a.png)
+        
+      - Experiments over hidden layers parameters
+        ![Exprms_hLayers](https://user-images.githubusercontent.com/94983485/184788667-0387c8f5-16b9-4efd-beb6-2a13b1ee153e.JPG)
         
     - Convolutional Neural Networks (CNN)
     - Recurrent Neural Networks (RNN)
