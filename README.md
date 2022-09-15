@@ -109,6 +109,13 @@ Deep Learning
       - Experiments over number of units per hidden layer parameters
         ![hLayers_nUnits](https://user-images.githubusercontent.com/94983485/185781330-bced05a2-ae3d-458c-bafb-fb6716bcc769.png)
         
+      - Data Inspection
+        ![data inspection](https://user-images.githubusercontent.com/94983485/190287084-a63c3d4a-f798-4e9d-b2fd-d1d884ef08f0.JPG)
+      
+      - Result Correlation
+        ![results_correlation](https://user-images.githubusercontent.com/94983485/190287653-903f1612-e43d-4b9c-9570-b4d835c35aca.JPG)
+        
+        
     - Convolutional Neural Networks (CNN)
     - Recurrent Neural Networks (RNN)
     
