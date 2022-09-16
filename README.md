@@ -103,6 +103,9 @@ Deep Learning
       - Overall Classification Performance (Softmax) - Experiments over learning rate parameters
         ![classification_performance](https://user-images.githubusercontent.com/94983485/184553831-55f606e8-38a1-44f3-a344-2dd736ac567a.png)
         
+      - Overall Classification Accuracy
+        ![overall_performance_category](https://user-images.githubusercontent.com/94983485/190528818-e35d8049-4acf-4e8e-8b55-5b1fd5c09270.JPG)
+
       - Experiments over hidden layers parameters
         ![Exprms_hLayers](https://user-images.githubusercontent.com/94983485/184788667-0387c8f5-16b9-4efd-beb6-2a13b1ee153e.JPG)
         
