@@ -93,6 +93,7 @@ Model Validation
 Deep Learning
 
   - Supervised
+  
     - Artificial Neural Networks (ANN)
       - Binary Classification
         ![Figure_1](https://user-images.githubusercontent.com/94983485/184515674-73c0a63f-14e3-4d69-870e-8acda9b72c1c.png)
@@ -118,7 +119,17 @@ Deep Learning
       - Result Correlation
         ![results_correlation](https://user-images.githubusercontent.com/94983485/190287653-903f1612-e43d-4b9c-9570-b4d835c35aca.JPG)
         
-        
+    - Fully-connected Feedforward Neural Network (FNN)
+      - MNIST Image Data
+      ![MNIST_image](https://user-images.githubusercontent.com/94983485/192119930-4b5419c6-4c8a-45d3-9a99-b3180f7516d2.png)
+      
+      - Data Inspection
+      ![data_inspection](https://user-images.githubusercontent.com/94983485/192119946-c3a0f51c-400a-41ee-ad4b-609326facaf3.png)
+
+      - Model's Weights Distribution
+      ![weights_distribution](https://user-images.githubusercontent.com/94983485/192119967-0cb5fc34-925f-4b87-b92e-8c140df6b0cb.png)
+
+
     - Convolutional Neural Networks (CNN)
     - Recurrent Neural Networks (RNN)
     
