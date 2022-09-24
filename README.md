@@ -119,7 +119,7 @@ Deep Learning
       - Result Correlation
         ![results_correlation](https://user-images.githubusercontent.com/94983485/190287653-903f1612-e43d-4b9c-9570-b4d835c35aca.JPG)
         
-    - Fully-connected Feedforward Neural Network (FNN)
+    - Fully-connected Feedforward Neural Network (FFN)
       - MNIST Image Data
       ![MNIST_image](https://user-images.githubusercontent.com/94983485/192119930-4b5419c6-4c8a-45d3-9a99-b3180f7516d2.png)
       
