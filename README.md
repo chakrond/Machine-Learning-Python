@@ -98,6 +98,9 @@ Deep Learning
       - Binary Classification
         ![Figure_1](https://user-images.githubusercontent.com/94983485/184515674-73c0a63f-14e3-4d69-870e-8acda9b72c1c.png)
         
+      - Model Performance Scores
+        ![perf_scores](https://user-images.githubusercontent.com/94983485/193439657-23a7c500-e5d6-4462-8391-4a8d5a25525e.png)
+
       - Multiple Classification - Experiments over learning rate parameters
         ![multiple_classification_softmax](https://user-images.githubusercontent.com/94983485/184528599-ef56881f-8df3-466d-9888-53fcd06dd80f.png)
 
