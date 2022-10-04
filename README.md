@@ -124,13 +124,16 @@ Deep Learning
         
     - Fully-connected Feedforward Neural Network (FFN)
       - MNIST Image Data
-      ![MNIST_image](https://user-images.githubusercontent.com/94983485/192119930-4b5419c6-4c8a-45d3-9a99-b3180f7516d2.png)
+        ![MNIST_image](https://user-images.githubusercontent.com/94983485/192119930-4b5419c6-4c8a-45d3-9a99-b3180f7516d2.png)
       
       - Data Inspection
-      ![data_inspection](https://user-images.githubusercontent.com/94983485/192686869-9a1a7201-f2c0-407c-b88a-5ccd5fcd6323.png)
+        ![data_inspection](https://user-images.githubusercontent.com/94983485/192686869-9a1a7201-f2c0-407c-b88a-5ccd5fcd6323.png)
 
       - Model's Weights Distribution
-      ![weights_distribution](https://user-images.githubusercontent.com/94983485/192119967-0cb5fc34-925f-4b87-b92e-8c140df6b0cb.png)
+        ![weights_distribution](https://user-images.githubusercontent.com/94983485/192119967-0cb5fc34-925f-4b87-b92e-8c140df6b0cb.png)
+      
+      - Model's Performance Scores
+        ![perf_scores_mnist](https://user-images.githubusercontent.com/94983485/193783987-0c7b4b9f-4cee-42a6-b100-54fe92b9eae0.png)
 
 
     - Convolutional Neural Networks (CNN)
