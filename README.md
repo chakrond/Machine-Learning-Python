@@ -143,13 +143,13 @@ Deep Learning
     - Self Organizing Maps
     - Boltzmann Machines
     - AutoEncoders
-      - Denoised
+      - Denoised \n
       ![AE_Denoised](https://user-images.githubusercontent.com/94983485/196859077-d065ae64-45ec-4599-a5ef-ee698f991ca1.png)
       
-      - Occlusion
+      - Occlusion \n
       ![AE_Denoised_Occlusion](https://user-images.githubusercontent.com/94983485/196859132-e7aaa1a8-8278-422a-860e-aed1c8a92871.png)
       
-      - Occlusion Effect
+      - Occlusion Effect \n
       ![Effect of occlusion](https://user-images.githubusercontent.com/94983485/196858693-a06a8a97-a672-4636-bb74-c4bc8de70dc4.JPG)
 
 
