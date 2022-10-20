@@ -144,10 +144,10 @@ Deep Learning
     - Boltzmann Machines
     - AutoEncoders
       - Denoised
-      ![AE_Denoised](https://user-images.githubusercontent.com/94983485/196858508-87b050f2-f524-48e6-8ade-fe057c06472a.png)
+      ![AE_Denoised](https://user-images.githubusercontent.com/94983485/196859077-d065ae64-45ec-4599-a5ef-ee698f991ca1.png)
       
-      - Denoised from occlusion
-      ![AE_Denoised_Occlusion](https://user-images.githubusercontent.com/94983485/196858637-962c4ccc-a9f8-4c8d-9723-da4fc5d21847.png)
+      - Occlusion
+      ![AE_Denoised_Occlusion](https://user-images.githubusercontent.com/94983485/196859132-e7aaa1a8-8278-422a-860e-aed1c8a92871.png)
       
       - Occlusion Effect
       ![Effect of occlusion](https://user-images.githubusercontent.com/94983485/196858693-a06a8a97-a672-4636-bb74-c4bc8de70dc4.JPG)
