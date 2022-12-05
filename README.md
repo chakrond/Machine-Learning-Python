@@ -89,6 +89,7 @@ Model Validation
   - k-Fold Cross Validation
   - Grid Search
 
+=============================================================================================================================================<br/>
 
 Deep Learning
 
@@ -136,7 +137,25 @@ Deep Learning
         ![perf_scores_mnist](https://user-images.githubusercontent.com/94983485/193783987-0c7b4b9f-4cee-42a6-b100-54fe92b9eae0.png)
 
 
-    - Convolutional Neural Networks (CNN)
+    - Convolutional Neural Networks (CNN)<br/>
+      - Feature maps<br/>
+        1st Convolution layer<br/>
+        ![feature map_1v2](https://user-images.githubusercontent.com/94983485/205623621-53783a52-6be4-4d7a-8a58-7dc0eef44bee.png)
+        2nd Convolution layer<br/>
+        ![feature map_2v2](https://user-images.githubusercontent.com/94983485/205623679-a4b7ed95-88e2-4b86-8dc1-0b84bd2e8adf.png)
+      
+      - Feature maps[occlusion sample]<br/>
+        Original<br/>
+        ![CNN_occlusion](https://user-images.githubusercontent.com/94983485/205624303-e558cd22-8a99-4fd1-ad7e-ef988ed0b602.png)
+        1st Convolution layer<br/>
+        ![feature map_occl_1](https://user-images.githubusercontent.com/94983485/205623949-20f37c7f-e70f-4f92-8e19-3007ba1f85d8.png)
+        2nd Convolution layer<br/>
+        ![feature map_occl_2](https://user-images.githubusercontent.com/94983485/205624104-ee02f6b1-0c59-4dfc-988f-0d8dfd2c2de7.png)
+
+      - Denoise
+        ![denoise](https://user-images.githubusercontent.com/94983485/205624335-1193bbdf-0430-4bc5-89f2-0b2f8e820907.png)
+
+
     - Recurrent Neural Networks (RNN)
     
   - Unsupervised
