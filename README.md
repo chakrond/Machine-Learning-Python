@@ -152,8 +152,17 @@ Deep Learning
         2nd Convolution layer<br/>
         ![feature map_occl_2](https://user-images.githubusercontent.com/94983485/205624104-ee02f6b1-0c59-4dfc-988f-0d8dfd2c2de7.png)
 
-      - Denoise
+      - Denoise<br/>
         ![denoise](https://user-images.githubusercontent.com/94983485/205624335-1193bbdf-0430-4bc5-89f2-0b2f8e820907.png)
+        
+      - Parameters Predictions<br/>
+        ![params_prediction](https://user-images.githubusercontent.com/94983485/206718211-b1b46c0f-0a51-44f9-960a-6d91a65d89fd.png)
+        ![params_prediction_values](https://user-images.githubusercontent.com/94983485/206718296-5a4677a3-73d4-44c4-87c3-ddcd4f0cd6fd.png)
+
+      - EMNIST<br/>
+        - EMNIST Predictions
+          ![EMNIST_prediction](https://user-images.githubusercontent.com/94983485/206718629-a905f154-0e1b-4465-a24c-56345e8d7572.png)
+          ![EMNIST_prediction_stats](https://user-images.githubusercontent.com/94983485/206718699-cd8a5e36-7b8c-47b1-a87c-e4d988c4e87c.png)
 
 
     - Recurrent Neural Networks (RNN)
