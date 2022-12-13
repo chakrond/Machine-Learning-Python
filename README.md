@@ -160,10 +160,17 @@ Deep Learning
         ![params_prediction_values](https://user-images.githubusercontent.com/94983485/206718296-5a4677a3-73d4-44c4-87c3-ddcd4f0cd6fd.png)
         
       - EMNIST<br/>
-        - EMNIST Predictions
+        - EMNIST Predictions<br/>
           ![EMNIST_prediction](https://user-images.githubusercontent.com/94983485/206718629-a905f154-0e1b-4465-a24c-56345e8d7572.png)
           ![EMNIST_prediction_stats](https://user-images.githubusercontent.com/94983485/206718699-cd8a5e36-7b8c-47b1-a87c-e4d988c4e87c.png)
           ![EMNIST_prediction_errors](https://user-images.githubusercontent.com/94983485/206719112-5e780ca9-4ac6-4c80-b1c8-0902c427f5a5.png)
+
+      - CIFAR10<br/>
+        - EMNIST Predictions<br/>
+          ![CIFAR10_prediction](https://user-images.githubusercontent.com/94983485/207319185-1aca8f56-271e-4bd4-819f-db06358d598a.png)
+          ![CIFAR10_ftMap_0v0](https://user-images.githubusercontent.com/94983485/207319272-de016b37-7661-4c1a-8800-eff805d984d9.png)
+          ![CIFAR10_prediction_accByGroupv0](https://user-images.githubusercontent.com/94983485/207319302-7e945bbc-dd46-4931-980c-6bf4373b5efc.png)
+
 
     - Recurrent Neural Networks (RNN)
     
