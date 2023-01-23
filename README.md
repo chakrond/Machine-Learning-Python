@@ -4,21 +4,19 @@ Machine Learningn<br/>
 
 This repo contains the example work of the following:
 
-  -------------------------------------------------------------------------<br/>
-  Supervised Learning<br/>
-  -------------------------------------------------------------------------<br/>
-  - Regression
-    - Simple Linear Regression
-    - Multiple Linear Regression
-    - Polynomial Regression
-    - Support Vector Regression (SVR)
-    - Decision Tree Regression
-    - Random Forest Regression
+  - Supervised Learning
+    - Regression
+      - Simple Linear Regression
+      - Multiple Linear Regression
+      - Polynomial Regression
+      - Support Vector Regression (SVR)
+      - Decision Tree Regression
+      - Random Forest Regression
   
-    Regression Comparison<br/>
-    ![Regression](https://user-images.githubusercontent.com/94983485/179699151-0bc06c20-a9b5-44a6-883b-81d37a38957f.png)
+      - Regression Comparison<br/>
+      ![Regression](https://user-images.githubusercontent.com/94983485/179699151-0bc06c20-a9b5-44a6-883b-81d37a38957f.png)
 
- 
+ -------------------------------------------------------------------------<br/>
   - Classification
     - Logistic Regression
     - K-Nearest Neighbors (K-NN)
@@ -28,38 +26,37 @@ This repo contains the example work of the following:
     - Decision Tree Classification
     - Random Forest Classification
    
-  Classification Comparison<br/>
-    ![Classification](https://user-images.githubusercontent.com/94983485/179698487-c192e7de-bc5e-4013-ad61-f4c97add457a.png)
+      Classification Comparison<br/>
+      ![Classification](https://user-images.githubusercontent.com/94983485/179698487-c192e7de-bc5e-4013-ad61-f4c97add457a.png)
   
-  Classification Decision Boundary Comparison<br/>
-    ![Classification_Decission_Boundary](https://user-images.githubusercontent.com/94983485/179698520-6133db07-a41e-412f-ba6f-dcf99e498c63.png)
+      Classification Decision Boundary Comparison<br/>
+      ![Classification_Decission_Boundary](https://user-images.githubusercontent.com/94983485/179698520-6133db07-a41e-412f-ba6f-dcf99e498c63.png)
 
   -------------------------------------------------------------------------<br/>
-  Unsupervised Learning<br/>
-  -------------------------------------------------------------------------<br/>
-  - Clustering
-    - K-Means Clustering
-    - Hierarchical Clustering
+  - Unsupervised Learning<br/>
+    - Clustering
+      - K-Means Clustering
+      - Hierarchical Clustering
  
-  Clustering Comparison<br/>
+    Clustering Comparison<br/>
     ![Clustering Comparison](https://user-images.githubusercontent.com/94983485/179699780-b048f7f0-7436-443f-ac03-3d202d43ccde.png)
   
-  Optimal Comparison<br/>
+    Optimal Comparison<br/>
     ![Optimal Comparison](https://user-images.githubusercontent.com/94983485/179699916-60d32f30-e637-4418-b276-520c08d1e9f3.png)
 
 
   -------------------------------------------------------------------------<br/>
-  Association Rule Learning<br/>
-  -------------------------------------------------------------------------<br/>
-  - Apriori
-  - Eclat
+  - Association Rule Learning<br/>
+    - Apriori
+    - Eclat
   
   -------------------------------------------------------------------------<br/>
-  Reinforcement Learning<br/>
+  - Reinforcement Learning<br/>
+    - Upper Confidence Bound (UCB)
+    - Thompson Sampling
+    - 
   -------------------------------------------------------------------------<br/>
-  - Upper Confidence Bound (UCB)
-  - Thompson Sampling
-  
+   
   UCB vs Thompson at iteration of 500<br/>
     ![UCB_vs_Thompson_500](https://user-images.githubusercontent.com/94983485/179701438-8eb03ee0-d899-495a-a9ed-c18a88a4d6ce.png)
 
@@ -67,16 +64,14 @@ This repo contains the example work of the following:
     ![UCB_vs_Thompson_1000](https://user-images.githubusercontent.com/94983485/179701546-4fb63e3d-d4cb-40b7-819c-7f6b99234bcb.png)
 
   -------------------------------------------------------------------------<br/>
-  Natural Language Processing<br/>
-  -------------------------------------------------------------------------<br/>
-  - Bag of words (CountVectorizer, Regression)
+  - Natural Language Processing<br/>
+    - Bag of words (CountVectorizer, Regression)
   
-  CountVectorizer & Prediction(Regression)<br/>
+  - CountVectorizer & Prediction(Regression)<br/>
     ![NLP_BagOfWords](https://user-images.githubusercontent.com/94983485/179868269-d480b1b6-8e3e-4c21-98fe-fea2a931f557.png)
 
   -------------------------------------------------------------------------<br/>
   Dimensionality Reduction<br/>
-  -------------------------------------------------------------------------<br/>
   - Supervised
     - Linear Discriminant Analysis (LDA)
     
@@ -91,24 +86,21 @@ This repo contains the example work of the following:
     ![confusion_mat_compare](https://user-images.githubusercontent.com/94983485/180927896-71294e2e-bb63-4aad-a217-f0527100a22c.png)
 
   -------------------------------------------------------------------------<br/>
-  XGBoost<br/>
-  -------------------------------------------------------------------------<br/>
-  - XGBoost Classifier
-
+  - XGBoost<br/>
+    - XGBoost Classifier
 
   -------------------------------------------------------------------------<br/>
-  Model Validation<br/>
-  -------------------------------------------------------------------------<br/>
-  - k-Fold Cross Validation
-  - Grid Search
-
+  - Model Validation<br/>
+    - k-Fold Cross Validation
+    - Grid Search
+    
+ -------------------------------------------------------------------------<br/>
+ 
 ===========================================================================<br/>
 Deep Learning<br/>
 ===========================================================================<br/>
 
-  -------------------------------------------------------------------------<br/>
-  Supervised<br/>
-  -------------------------------------------------------------------------<br/>
+  - Supervised<br/>
   
     - Artificial Neural Networks (ANN)
       - Binary Classification<br/>
@@ -189,9 +181,17 @@ Deep Learning<br/>
 
     - Recurrent Neural Networks (RNN)
     
+    
+    - Generative Adversarial Network (GAN)
+      - Generated Image
+        - FMNIST<br/>
+        ![generated_res_fmnist](https://user-images.githubusercontent.com/94983485/214040452-eb35d0e5-bc10-40f2-b283-fb20085adf59.png)
+        - MNIST<br/>
+        ![generated_res_mnist](https://user-images.githubusercontent.com/94983485/214040579-20c9727e-e1c6-4229-a64a-c0a2c34375c7.png)
+
   -------------------------------------------------------------------------<br/>
-  Unsupervised<br/>
-  -------------------------------------------------------------------------<br/>
+  - Unsupervised<br/>
+
     - Self Organizing Maps
     - Boltzmann Machines
     - AutoEncoders
@@ -214,8 +214,8 @@ Deep Learning<br/>
       ![PCA](https://user-images.githubusercontent.com/94983485/198128516-8b163283-f9c4-4b1a-bd57-34cc801b9c43.JPG)
 
   -------------------------------------------------------------------------<br/>
-  Math Function<br/>
-  -------------------------------------------------------------------------<br/>
+  - Math Function<br/>
+  
     - Sigmoid<br/>
       ![sigmoid_relu](https://user-images.githubusercontent.com/94983485/183615058-fe96a2af-28d6-44c9-b7bd-e3ca4f7e6efe.jpg)
 
