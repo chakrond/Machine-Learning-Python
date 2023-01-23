@@ -16,7 +16,7 @@ This repo contains the example work of the following:
       - Regression Comparison<br/>
       ![Regression](https://user-images.githubusercontent.com/94983485/179699151-0bc06c20-a9b5-44a6-883b-81d37a38957f.png)
 
- -------------------------------------------------------------------------<br/>
+ -----------------------------------------------------------------------------------------------------<br/>
   - Classification
     - Logistic Regression
     - K-Nearest Neighbors (K-NN)
@@ -32,7 +32,7 @@ This repo contains the example work of the following:
       Classification Decision Boundary Comparison<br/>
       ![Classification_Decission_Boundary](https://user-images.githubusercontent.com/94983485/179698520-6133db07-a41e-412f-ba6f-dcf99e498c63.png)
 
-  -------------------------------------------------------------------------<br/>
+  -----------------------------------------------------------------------------------------------------<br/>
   - Unsupervised Learning<br/>
     - Clustering
       - K-Means Clustering
@@ -45,17 +45,17 @@ This repo contains the example work of the following:
     ![Optimal Comparison](https://user-images.githubusercontent.com/94983485/179699916-60d32f30-e637-4418-b276-520c08d1e9f3.png)
 
 
-  -------------------------------------------------------------------------<br/>
+  -----------------------------------------------------------------------------------------------------<br/>
   - Association Rule Learning<br/>
     - Apriori
     - Eclat
   
-  -------------------------------------------------------------------------<br/>
+  -----------------------------------------------------------------------------------------------------<br/>
   - Reinforcement Learning<br/>
     - Upper Confidence Bound (UCB)
     - Thompson Sampling
     - 
-  -------------------------------------------------------------------------<br/>
+  -----------------------------------------------------------------------------------------------------<br/>
    
   UCB vs Thompson at iteration of 500<br/>
     ![UCB_vs_Thompson_500](https://user-images.githubusercontent.com/94983485/179701438-8eb03ee0-d899-495a-a9ed-c18a88a4d6ce.png)
@@ -63,14 +63,14 @@ This repo contains the example work of the following:
   UCB vs Thompson at iteration of 10000<br/>
     ![UCB_vs_Thompson_1000](https://user-images.githubusercontent.com/94983485/179701546-4fb63e3d-d4cb-40b7-819c-7f6b99234bcb.png)
 
-  -------------------------------------------------------------------------<br/>
+  -----------------------------------------------------------------------------------------------------<br/>
   - Natural Language Processing<br/>
     - Bag of words (CountVectorizer, Regression)
   
   - CountVectorizer & Prediction(Regression)<br/>
     ![NLP_BagOfWords](https://user-images.githubusercontent.com/94983485/179868269-d480b1b6-8e3e-4c21-98fe-fea2a931f557.png)
 
-  -------------------------------------------------------------------------<br/>
+  -----------------------------------------------------------------------------------------------------<br/>
   Dimensionality Reduction<br/>
   - Supervised
     - Linear Discriminant Analysis (LDA)
