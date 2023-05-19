@@ -135,6 +135,9 @@ Deep Learning<br/>
       - Data Inspection<br/>
         ![data_inspection](https://user-images.githubusercontent.com/94983485/192686869-9a1a7201-f2c0-407c-b88a-5ccd5fcd6323.png)
 
+      - How data looks like<br/>
+        ![download](https://github.com/chakrond/Machine-Learning-Python/assets/94983485/c52c8e26-09bd-4130-9c65-12d21c95ae39)
+
       - Model's Weights Distribution<br/>
         ![weights_distribution](https://user-images.githubusercontent.com/94983485/192119967-0cb5fc34-925f-4b87-b92e-8c140df6b0cb.png)
       
