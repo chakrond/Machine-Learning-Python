@@ -34,7 +34,8 @@ class AE_Class(nn.Module):
                  activation_fun='relu',  # activation function at hidden layers
                  activation_fun_out='sigmoid',
                  optim_fun='Adam',
-                 w_fro=''
+                 w_fro='',
+                 tieweight=False
                  ):
 
 
@@ -45,11 +46,22 @@ class AE_Class(nn.Module):
 
         self.layers['input']   = nn.Linear(feature_in, n_enUnit)  # input layer
 
-        self.layers['encoder'] = nn.Linear(n_enUnit, n_latUnit)
-        
-        self.layers['latent']  = nn.Linear(n_latUnit, n_enUnit)
+        if tieweight==True:
+            
+            self.input   = nn.Linear(feature_in, n_enUnit)
+            
+            self.encoder = nn.Parameter(torch.randn(n_latUnit, n_enUnit))
+            
+            self.decoder = nn.Linear(n_enUnit, feature_out)
 
-        self.layers['decoder'] = nn.Linear(n_enUnit, feature_out)  # decoder layer
+        else:
+            self.layers['input']   = nn.Linear(feature_in, n_enUnit)  # input layer
+            
+            self.layers['encoder'] = nn.Linear(n_enUnit, n_latUnit)
+            
+            self.layers['latent']  = nn.Linear(n_latUnit, n_enUnit)
+
+            self.layers['decoder'] = nn.Linear(n_enUnit, feature_out)  # decoder layer
 
         # ---------------------------------------
         # Parameters
@@ -61,6 +73,9 @@ class AE_Class(nn.Module):
         self.actfunOut = activation_fun_out
         # weight params
         self.wFro = w_fro
+        # weight tie config
+        self.tieW = tieweight
+        
 
         # ---------------------------------------
         # Number of parameters
@@ -85,7 +100,7 @@ class AE_Class(nn.Module):
         
         self.optimizer = optimFun(self.parameters(), **paramsDict)
         
-
+        
     # forward pass
     def forward(self, x):
 
@@ -94,18 +109,32 @@ class AE_Class(nn.Module):
         # activation functions decoder
         actFun_out = getattr(torch, self.actfunOut)
 
-        # input layer
-        x = actFun(self.layers['input'](x))
-
-        # encoder layer
-        x = actFun(self.layers['encoder'](x))
-        self.fwLat = x.clone().detach() # observe this output
+        if self.tieW == False:
+            # input layer
+            x = actFun(self.layers['input'](x))
+    
+            # encoder layer
+            x = actFun(self.layers['encoder'](x))
+            self.fwLat = x.clone().detach() # observe this output
+            
+            # laten layer
+            x = actFun(self.layers['latent'](x))
+    
+            # return decoder layer
+            x = actFun_out(self.layers['decoder'](x))
         
-        # laten layer
-        x = actFun(self.layers['latent'](x))
-
-        # return decoder layer
-        x = actFun_out(self.layers['decoder'](x))
+        if self.tieW == True: 
+            # input layer
+            x = actFun( self.input(x) )
+    
+            # encoder layer
+            x = actFun( self.encoder@x.t() )
+            self.fwLat = x.clone().detach() # observe this output
+            
+            # return decoder layer
+            x = actFun( self.encoder.t()@x )
+            x = actFun_out( self.decoder(x.t()) )
+            
             
         return x
     
